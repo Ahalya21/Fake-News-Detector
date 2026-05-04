@@ -345,7 +345,8 @@ print(f"\nTest label distribution:\n{y_test.value_counts()}")
 
 print('------------Feature Extraction------------')
 
-#3.1: Sentiment Analysis (VADER)
+#3.1: Sentiment Analysis (VADER) Valence Aware Dictionary and sEntiment Reasoner
+
 analyzer = SentimentIntensityAnalyzer()
 
 def get_vader_sentiment(text):
@@ -660,6 +661,11 @@ print(f"Best model saved → best_model.pkl")
 
 
 
+joblib.dump(tfidf,    'tfidf_vectorizer.pkl')  # TF-IDF vectorizer
+joblib.dump(scaler,   'nb_scaler.pkl')          # Scaler for NB
+joblib.dump(model,    'lr_model.pkl')           # Logistic Regression
+joblib.dump(nb_model, 'nb_model.pkl')           # Naive Bayes
+joblib.dump(best_model, 'best_model.pkl')       # Best model
 
 
 
